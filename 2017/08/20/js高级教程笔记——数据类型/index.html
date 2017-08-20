@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jar-6.github.io">
-  <title>范范的博客</title>
+  <title>js高级教程笔记——数据类型 | 范范的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="范范的博客">
-<meta property="og:url" content="https://jar-6.github.io/index.html">
+  <meta name="description" content="一、数据类型1. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js高级教程笔记——数据类型">
+<meta property="og:url" content="https://jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/index.html">
 <meta property="og:site_name" content="范范的博客">
+<meta property="og:description" content="一、数据类型1. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx i">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://jar-6.github.io/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png">
+<meta property="og:updated_time" content="2017-08-20T07:43:13.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="范范的博客">
+<meta name="twitter:title" content="js高级教程笔记——数据类型">
+<meta name="twitter:description" content="一、数据类型1. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx i">
+<meta name="twitter:image" content="https://jar-6.github.io/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png">
   
     <link rel="alternative" href="/atom.xml" title="范范的博客" type="application/atom+xml">
   
@@ -150,16 +156,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-js高级教程笔记——数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js高级教程笔记——数据类型" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/">js高级教程笔记——数据类型</a>
+    <h1 class="article-title" itemprop="name">
+      js高级教程笔记——数据类型
     </h1>
   
 
@@ -282,16 +286,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/jar-6.github.io/2017/08/20/学习Vue/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习Vue</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -311,304 +374,12 @@
 
 
 
-
   
-    <article id="post-学习Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/学习Vue/">学习Vue</a>
-    </h1>
   
 
-        
-        <a href="/jar-6.github.io/2017/08/20/学习Vue/" class="archive-article-date">
-  	<time datetime="2017-08-20T06:20:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考教程：<br><a href="http://www.open-open.com/lib/view/open1476240930270.html" target="_blank" rel="external">总教程1</a><br><a href="http://www.cnblogs.com/xuange306/p/6092225.html" target="_blank" rel="external">总教程2</a><br><a href="http://blog.csdn.net/tanga842428/article/details/53052970" target="_blank" rel="external">route-link</a><br><a href="http://cnodejs.org/topic/5816aabdcf18d0333412d323" target="_blank" rel="external">组件命名</a><br><a href="http://www.cnblogs.com/summerXll/p/6540522.html" target="_blank" rel="external">引入外部css</a><br><a href="http://blog.csdn.net/github_26672553/article/details/53176778" target="_blank" rel="external">vuex</a><br><a href="http://www.cnblogs.com/zhouyangla/p/6753673.html" target="_blank" rel="external">axios</a></p>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><p>首先安装了node.js、npm、webpack、vue-cli等</p>
-<p><strong>这都是啥：</strong></p>
-<ul>
-<li>node.js：是一个Javascript运行环境(runtime)。 简单的说就是运行在服务端的 JavaScript。使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。</li>
-<li>npm：node.js下的包管理器。大家都把自己开发的模块打包后放到npm官网上，如果要使用，直接通过npm安装就可以直接用，不用管代码存在哪，应该从哪下载。包之间可能相互依赖，npm可以根据依赖关系，把所有依赖的包都下载下来并管理起来。</li>
-<li>webpack：将vue组件（vue一个组件把<template\><script\><style\>三层整合到一起）翻译和打包成 .js文件</style\></script\></template\></li>
-<li>vue-cli：用来生成模板</li>
-<li>vuex：将状态管理单独拎出来，集中式管理组件状态（如组件显示/隐藏）&amp;组件间的数据通信，方便维护修改。用单向数据流的方式，用户界面负责触发动作（Action)进而改变对应状态（State），从而反映到视图（View）上</li>
-<li>axios/vue-resource：基于 promise 的 HTTP 库<br>（另外，在github上找了一些别人做的项目用来学习，发现cnpm install 总报错，于是又安装了）</li>
-<li>sass（要装sass需要装ruby，于是又装了ruby。。。但是最后我还没有用到）</li>
-</ul>
-<p><strong>安装步骤：</strong></p>
-<ol>
-<li>先安装node.js（注意版本！），国内镜像-点击打开链接<br>安装方法参考：廖雪峰的node教程-点击打开链接</li>
-<li>npm也跟着装好了，cnpm（网速慢用淘宝镜像）还要再装，打开终端（运行-&gt;cmd）：npm<br>install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
-<li>剩下那些cnpm install xx就可以了（有些装不上可以再来一次 可能网不好），</li>
-<li>vuex和axios/vue-resource等需要在main.js中引入：import Vuex from ‘vuex’; Vue.use(Vuex);<br>（axios并不是vue插件，所以不能 使用Vue.use()，只能在每个需要发送请求的组件中即时引入。可以在import axios 之后，通过Vue.prototype.$http<br>= axios修改原型链，来更方便的使用。）</li>
-</ol>
-<p>关于axios查了好多资料但是还是总报错，后来只好用vue-resource。。有空再研究一下。</p>
-<h2 id="二、准备"><a href="#二、准备" class="headerlink" title="二、准备"></a>二、准备</h2><ol>
-<li>创建模板：vue init webpack xxx（过程:loading template）</li>
-<li>安装依赖：进入项目文件夹，cnpm install（可以看一下package.json中的devDependencies）（要研究别人的项目从这步开始）</li>
-<li>启动服务器：npm run dev,自动打开监听端口localhost：xxxx（可以看一下package.json中的scripts.dev）（以后每次打开都要先完成这步）</li>
-</ol>
-<h2 id="三、开始"><a href="#三、开始" class="headerlink" title="三、开始"></a>三、开始</h2><p>关于vue的基本使用：</p>
-<ol>
-<li>实例化一个Vue，它有几个选项：<br>data放数据、methods放方法、watch放监听（要监听的数据：变化了干啥）</li>
-<li>vue对象和html之间的粘合剂，是一些模板指令<br>数据渲染：<br>v-text（连标签也渲染）、 v-html、 { { } }<br>v-if (不渲染元素）、v-show（渲染但是不显示）<br>v-for（用于数组中套着一些对象）<br>v-on（事件绑定）<br>v-bind（可用来控制class）<br>具体用法：<br>比如如果想把class和某数据绑定（如果是false就变成某个样式） v-bind:class=”{class名: 一个布尔值的数据名，可以是数组中的某个对象的某个key},还要在<br>还有一种用法，如果想要切换多个class：在data里写上一项 class的代称：‘class名’，在template中写v-bind:class=”[class代称]”</li>
-</ol>
-<ol>
-<li>自定义vue全局组件，并use使用，资料-点击打开链接</li>
-</ol>
-<ol>
-<li>vuex<br>mapActions():可以将所有methods里面的方法，进行打包。即对所有的事件(或我们的行为)进行管理<br>mapGetters：获取所有的数据，对所有的数据进行管理<br>vuex的工作过程：<br>当用户点击时，会调用increment函数(即用户有一个动作dispatch)，mapActions将函数(动作dispatch)提交到actions里面，并且传了commit这个参数(也是一个函数)<br>commit主要处理你要做什么，比如异步请求，判断，流程控制等，commit会将这些请求、状态提交到mutations里面mutations主要用来处理状态(数据)的变化<br>mapGetters获取目前数据，将状态(数据)提交到getters上面，给mutations使用，让数据发生变化，并返回(render)，从而更新视图<br>actions里面除了含有commit这的对象参数以外，还有另一个参数state(Vue组件中展示的数据源)在这个过程中可以对数据进行判断，并作出相应的操作</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/学习Vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-上传本地项目到github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/上传本地项目到github/">上传本地项目到github</a>
-    </h1>
   
 
-        
-        <a href="/jar-6.github.io/2017/08/20/上传本地项目到github/" class="archive-article-date">
-  	<time datetime="2017-08-20T05:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在练习用vue做一个播放器，最后在上传代码时遇到了一些问题，整理一下上传步骤和注意事项。<br>上传步骤如下：<br>进入项目文件夹，touch README.md<br>git init。【创建一个仓库，这时文件夹里会出现一个.git文件夹】<br>git add README.md<br>git add .【注意 .点】<br>git commit -m “注释文字”【要加上-m  “注释文字“”，否则会出现git aborting commit due to empty commit message，我是被卡在这里了。。】<br>git remote add origin git@地址~<br>git push origin master【第一次把push打成pull了，后来看到一篇文章里写如果push不成功可以先pull以下再push】</p>
-<p>终于成功了~~~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/上传本地项目到github/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-yeah" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/18/yeah/">yeah</a>
-    </h1>
-  
-
-        
-        <a href="/jar-6.github.io/2017/08/18/yeah/" class="archive-article-date">
-  	<time datetime="2017-08-18T15:33:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>被水淹没，不知所措。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/18/yeah/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/jar-6.github.io/2017/08/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-18T15:01:54.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/18/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -631,8 +402,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jar-6.github.io">
-  <title>范范的博客</title>
+  <title>学习Vue | 范范的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="范范的博客">
-<meta property="og:url" content="https://jar-6.github.io/index.html">
+  <meta name="description" content="参考教程：总教程1总教程2route-link组件命名引入外部cssvuexaxios 一、安装首先安装了node.js、npm、webpack、vue-cli等 这都是啥：  node.js：是一个Javascript运行环境(runtime)。 简单的说就是运行在服务端的 JavaScript。使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Vue">
+<meta property="og:url" content="https://jar-6.github.io/2017/08/20/学习Vue/index.html">
 <meta property="og:site_name" content="范范的博客">
+<meta property="og:description" content="参考教程：总教程1总教程2route-link组件命名引入外部cssvuexaxios 一、安装首先安装了node.js、npm、webpack、vue-cli等 这都是啥：  node.js：是一个Javascript运行环境(runtime)。 简单的说就是运行在服务端的 JavaScript。使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-20T06:50:20.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="范范的博客">
+<meta name="twitter:title" content="学习Vue">
+<meta name="twitter:description" content="参考教程：总教程1总教程2route-link组件命名引入外部cssvuexaxios 一、安装首先安装了node.js、npm、webpack、vue-cli等 这都是啥：  node.js：是一个Javascript运行环境(runtime)。 简单的说就是运行在服务端的 JavaScript。使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。">
   
     <link rel="alternative" href="/atom.xml" title="范范的博客" type="application/atom+xml">
   
@@ -150,177 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-js高级教程笔记——数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-学习Vue" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/">js高级教程笔记——数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/" class="archive-article-date">
-  	<time datetime="2017-08-20T07:36:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h2><h3 id="1-总述"><a href="#1-总述" class="headerlink" title="1. 总述"></a>1. 总述</h3><p><strong>区别：</strong></p>
-<ul>
-<li>基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本</li>
-<li>引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本<br>（指针指向堆中的同一个对象）</li>
-</ul>
-<p><strong>检测方法：</strong></p>
-<ul>
-<li>typeof xx：检测是什么类型，返回类型（所有引用类型均返回object）</li>
-<li>xx instanceof 一种指定引用类型：检测是什么引用类型，返回boolean（只能用在一个框架里的数组）</li>
-<li>constructor 属性-Array.isArray(value)：ECMAScript新增，同instanceof（可用在多个框架）</li>
-</ul>
-<p><strong>转换方法：</strong></p>
-<ul>
-<li>valueOf：Array-字符串，Date-1970.1.1毫秒数，其他不变</li>
-<li>toString（）/toLocaleString（）</li>
-</ul>
-<h3 id="2-各类型"><a href="#2-各类型" class="headerlink" title="2. 各类型"></a>2. 各类型</h3><p><strong>基本类型（见第三章）：</strong><br>Undefined、Null、Boolean、Number、String<br><strong>引用类型：</strong></p>
-<h6 id="object"><a href="#object" class="headerlink" title="object:"></a>object:</h6><ul>
-<li>创建实例：</li>
-</ul>
-<ol>
-<li>构造函数，然后添加对象的属性</li>
-<li>字面量表示法，在字面量中直接写属性（最后一项没有逗号）</li>
-</ol>
-<ul>
-<li>访问属性：两种方法</li>
-</ul>
-<ol>
-<li>a[“b”]，用于：a属性名中有空格等 b 属性名是变量。</li>
-<li>a.b<h6 id="array："><a href="#array：" class="headerlink" title="array："></a>array：</h6></li>
-</ol>
-<ul>
-<li>创建实例：</li>
-</ul>
-<ol>
-<li>构造函数，可以在（）中设定长度/传入项</li>
-<li>字面量表示法，注意逗号</li>
-</ol>
-<ul>
-<li>访问属性：<br>可以直接通过访问xx[x]修改&amp;新增值（可以不管长度跳着新增），可以直接通过修改length删除值</li>
-<li>方法</li>
-</ul>
-<ol>
-<li>改变原数组，返回其他：<br>push()：栈方法，返回新数组长度<br>pop()：栈方法，返回移除项<br>shift()：队列方法，返回移除项<br>unshift()：队列方法，返回新数组长度<br>reverse()：<br>sort(function(a,b){return ~})：如果没有function，各项转化成字符串</li>
-<li>操作方法不改变原数组，返回新数组：<br>concat()：<br>slice(start,end可选)：参数是负数时，倒数。<br>splice(index,deleteCount删除,item1,…..,itemX添加-可选)</li>
-<li>位置方法，返回其他<br>indexOf/latIndexOf()：返回位置值/没有返回-1</li>
-<li>迭代方法，不改变原数组，返回其他/新数组，回调函数-function(item,index,array){return ~}<br>every()/some()：返回boolean<br>map()/forEach()：map返回新数组，filter无返回值<br>filter()：返回新数组<br>reduce(func(prev,cur,index,array){return ~})：归并方法，第一次运算返回值作为第一个参数传入到第二次运算<h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6></li>
-</ol>
-<ul>
-<li>创建实例&amp;方法：<br>返回日期毫秒数(1970.1.1的毫秒数)<br>new Date(“月/日/年”)=new Date( Date.parse(“月/日/年”))<br>new Date(Date.UTC(年,月，其他可选) )<br>表示调用函数时的毫秒数：Date.now()：【可在函数前后加两次，用来算出调用函数所用时间】<br>格式化：toUTCString()<h6 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h6></li>
-<li>创建实例：三种，如果不知道用什么，用构造函数</li>
-</ul>
-<ol>
-<li>/ab+c/i;</li>
-<li>new RegExp(‘ab+c’, ‘i’);</li>
-<li>new RegExp(/ab+c/, ‘i’);</li>
-</ol>
-<ul>
-<li>属性：</li>
-</ul>
-<ol>
-<li>实例属性：global 、multiline、 ignoreCare、 lastIndex 、source</li>
-<li>构造函数属性：input lastMatch lastParen leftContext rightContext multiline</li>
-</ol>
-<ul>
-<li>方法：</li>
-</ul>
-<ol>
-<li>pattern.exec()【每次运行只找一个，如果开了全局，第二次会找下一个，不开全局，则一直返回第一个】</li>
-<li>pattern.test()【是否符合模式】例：if（pattern.test(text)){alert(RegExp.input);<br><img src="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png" alt="table">6666</li>
-</ol>
-<h6 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h6><ul>
-<li>定义方法：</li>
-</ul>
-<ol>
-<li>函数声明： function xx(){；}提升</li>
-<li>函数表达式定义 ：var xx=function(){；}不提升,故可能产生错误</li>
-<li>构造函数 ：可接受任意数量参数 最后一个参数是函数体，所有参数加引号，（不推荐，导致解析两次）</li>
-</ol>
-<ul>
-<li>函数和函数名：<br>函数是对象，函数名是指向函数的指针<br>可以有多个名字指向同一函数，改一个名字不影响另一个，但如果直接用声明函数的方式去改，就会影响所有指针<br>同一个名字赋给两个不同函数，后一个会覆盖前一个函数（没有重载）<br>函数可以作为arg值传递给别的函数，要想在传递的时候不运行他，就要传递不带括号的函数名，也就是指针（所有filter这类函数中的回调函数都没有括号！）</li>
-<li>内部属性</li>
-</ul>
-<ol>
-<li>callee：<br>指向拥有argument对象的函数（在函数内部调用就是函数本身，防止函数在外部改名想调自己的时候调不到）</li>
-<li>this：<br>调用函数的对象 全局中是windows</li>
-<li>caller：<br>调用函数的函数 全局中是null</li>
-</ol>
-<ul>
-<li>属性</li>
-</ul>
-<ol>
-<li>length：argument数量</li>
-<li>prototype：（见第六章。。）</li>
-</ol>
-<ul>
-<li>方法<br>apply（在其中运行函数的作用域，数组/arguments）/call（在其中运行函数的作用域，数组中的各项）:<br>把a函数的作用域改成b（在b函数内运行a，把b的参数用到a函数中），作用是扩充运行作用域<br>例：funtion a(arg1,arg2){~};function<br>b(arg1,arg2){return a.apply(this,[arg1,arg2]/arguments)}<br>bind()。。</li>
-</ul>
-<p><strong>特殊引用类型-基本包装类型</strong><br>每个基本类型都有一个基本包装类型，<br>因为基本类型不能用方法，所以当对基本类型使用方法时，他们会默默出现，创建引用类型的一个实例，执行方法后销毁。所<br>不建议显式的调用因为new出的东西其实是个object 跟正常的基本类型是不同的，比如new一个boolean，它其实是一个object，值永远是TRUE</p>
-<h2 id="二、执行环境及作用域（p73）"><a href="#二、执行环境及作用域（p73）" class="headerlink" title="二、执行环境及作用域（p73）"></a>二、执行环境及作用域（p73）</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/学习Vue/">学习Vue</a>
+    <h1 class="article-title" itemprop="name">
+      学习Vue
     </h1>
   
 
@@ -380,16 +221,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/学习Vue/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://jar-6.github.io/2017/08/20/学习Vue/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js高级教程笔记——数据类型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/jar-6.github.io/2017/08/20/上传本地项目到github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">上传本地项目到github</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -409,206 +318,12 @@
 
 
 
-
   
-    <article id="post-上传本地项目到github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/上传本地项目到github/">上传本地项目到github</a>
-    </h1>
   
 
-        
-        <a href="/jar-6.github.io/2017/08/20/上传本地项目到github/" class="archive-article-date">
-  	<time datetime="2017-08-20T05:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在练习用vue做一个播放器，最后在上传代码时遇到了一些问题，整理一下上传步骤和注意事项。<br>上传步骤如下：<br>进入项目文件夹，touch README.md<br>git init。【创建一个仓库，这时文件夹里会出现一个.git文件夹】<br>git add README.md<br>git add .【注意 .点】<br>git commit -m “注释文字”【要加上-m  “注释文字“”，否则会出现git aborting commit due to empty commit message，我是被卡在这里了。。】<br>git remote add origin git@地址~<br>git push origin master【第一次把push打成pull了，后来看到一篇文章里写如果push不成功可以先pull以下再push】</p>
-<p>终于成功了~~~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/上传本地项目到github/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-yeah" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/18/yeah/">yeah</a>
-    </h1>
   
 
-        
-        <a href="/jar-6.github.io/2017/08/18/yeah/" class="archive-article-date">
-  	<time datetime="2017-08-18T15:33:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>被水淹没，不知所措。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/18/yeah/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/jar-6.github.io/2017/08/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-18T15:01:54.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/18/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -631,8 +346,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
