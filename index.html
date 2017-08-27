@@ -152,6 +152,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js高级教程笔记——原型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/jar-6.github.io/2017/08/23/js高级教程笔记——原型/">js高级教程笔记——原型</a>
+    </h1>
+  
+
+        
+        <a href="/jar-6.github.io/2017/08/23/js高级教程笔记——原型/" class="archive-article-date">
+  	<time datetime="2017-08-23T14:59:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、执行环境及作用域（p73）"><a href="#一、执行环境及作用域（p73）" class="headerlink" title="一、执行环境及作用域（p73）"></a>一、执行环境及作用域（p73）</h2><ul>
+<li>执行环境：<br>执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。<br>全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法</li>
+<li>作用域链：<br>顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境</li>
+<li>延迟作用域链：</li>
+</ul>
+<ol>
+<li>try-catch语句中catch块？？</li>
+<li>with语句？？<br>-没有块级作用域（所以变量弄不好就会乱）</li>
+<li>初始化变量没有var声明，会自动添加到全局环境</li>
+<li>用变量时会沿着作用域链搜寻,所以会被覆盖（如果变量被定义多次会用作用域链前端的那个。)</li>
+</ol>
+<p>然后有空研究一下深浅拷贝</p>
+<h2 id="二、对象的原型-amp-继承"><a href="#二、对象的原型-amp-继承" class="headerlink" title="二、对象的原型&amp;继承"></a>二、对象的原型&amp;继承</h2><p><img src="http://images2015.cnblogs.com/blog/787416/201603/787416-20160323103622089-1134417169.png" alt=""><br><img src="http://images2015.cnblogs.com/blog/787416/201603/787416-20160322110905589-2039017350.png" alt=""></p>
+<ul>
+<li>读取属性时会沿着原型链搜寻,所以会被覆盖（如果有多个属性会用实例的那个。）</li>
+<li>相关方法：</li>
+</ul>
+<ol>
+<li>~.hasOwnProperty(“property”)：检测属性是否存在,在实例中返回true</li>
+<li>“property” in ~：检测属性是否存在,在实例和原型中都返回true<br>3.~.keys():取得所有可枚举属性<br>4.~ instanceof 原型：测试实例和原型链中出现的构造函数</li>
+</ol>
+<h3 id="创建对象方法"><a href="#创建对象方法" class="headerlink" title="创建对象方法"></a>创建对象方法</h3><ul>
+<li>创建一个Object实例，添加属性方法。var xx=new Object();xx.oo=”~”,xx.oo2=function(){}</li>
+<li>字面量语法：var xx={xx:”~”,xx2:function(){}}</li>
+<li>工厂模式：适用于批量<br>把在函数中创建实例，参数传入函数：<br>function createXx(oo1,oo2..){var xx=new Object; xx.oo1=oo1; xx.oo2=function(){?oo2};return xx}<br>var xx实例=createXx(oo1,oo2..);</li>
+<li>构造函数模式：解决了对象识别问题<br>把前者的函数名换成自定义构造函数、函数中不new Object&amp;不return、函数后var实例时var的是自定义的对象。<br>function Xx(oo1,oo2..){xx.oo1=oo1; xx.oo2=function(){?oo2};}<br>var xx实例=Xx(oo1,oo2..);</li>
+<li>原型模式：所有对象共享属性方法<br>把前者的参数去掉，添加属性时加上prototype<br>function Xx(){xx.prototype.oo1=oo1; xx.prototype.oo2=function(){?oo2};}<br>var xx实例=Xx();</li>
+<li>把前者函数中的所有内容用字面量表示：比较好写<br>但是相当于重写了prototype，导致</li>
+</ul>
+<ol>
+<li>constructior属性不再指向自定义原型，所以要加上’constructor:自定义原型’这句，但是后加上的是可枚举的</li>
+<li>切断原型和实例的关系，实例不可调用原型中的方法</li>
+</ol>
+<ul>
+<li>组合使用构造函数模式和原型模式！！！！<br>构造函数模式定义实例属性，原型模式定义方法和共享属性<br>function Xx(oo1,oo2..){xx.oo1=oo1; }<br>Xx.prototype={constructor:Xx, oo2:function(){?oo2};}<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3>用原型链继承原型属性和方法，用构造函数继承实例属性<br>function SubXx(oo1,oo2,oo3){<br>Xx.call(this,oo1);     //用原型链继承属性<br>this.oo3=oo3    //用原型链新建属性<br>}<br>SubXx.prototype=new Xx();     //用构造函数继承方法<br>SubXx.prototype.constructor=SubXx; SubXx.prototype.oo4    //用构造函数新建方法</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/jar-6.github.io/2017/08/23/js高级教程笔记——原型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js高级教程笔记——数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +270,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h2><h3 id="1-总述"><a href="#1-总述" class="headerlink" title="1. 总述"></a>1. 总述</h3><p><strong>区别：</strong></p>
+        <h2 id="一-总述"><a href="#一-总述" class="headerlink" title="一. 总述"></a>一. 总述</h2><p><strong>区别：</strong></p>
 <ul>
 <li>基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本</li>
 <li>引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本<br>（指针指向堆中的同一个对象）</li>
@@ -186,9 +284,11 @@
 <p><strong>转换方法：</strong></p>
 <ul>
 <li>valueOf：Array-字符串，Date-1970.1.1毫秒数，其他不变</li>
-<li>toString（）/toLocaleString（）</li>
+<li>toString()/toLocaleString()</li>
+<li>parseInt()/parseFloat()/number()</li>
+<li>隐式类型转换==(===不转换类型)</li>
 </ul>
-<h3 id="2-各类型"><a href="#2-各类型" class="headerlink" title="2. 各类型"></a>2. 各类型</h3><p><strong>基本类型（见第三章）：</strong><br>Undefined、Null、Boolean、Number、String<br><strong>引用类型：</strong></p>
+<h2 id="二-各类型"><a href="#二-各类型" class="headerlink" title="二. 各类型"></a>二. 各类型</h2><p><strong>基本类型（见第三章）：</strong><br>Undefined、Null、Boolean、Number、String<br><strong>引用类型：</strong></p>
 <h6 id="object"><a href="#object" class="headerlink" title="object:"></a>object:</h6><ul>
 <li>创建实例：</li>
 </ul>
@@ -218,9 +318,10 @@
 <li>改变原数组，返回其他：<br>push()：栈方法，返回新数组长度<br>pop()：栈方法，返回移除项<br>shift()：队列方法，返回移除项<br>unshift()：队列方法，返回新数组长度<br>reverse()：<br>sort(function(a,b){return ~})：如果没有function，各项转化成字符串</li>
 <li>操作方法不改变原数组，返回新数组：<br>concat()：<br>slice(start,end可选)：参数是负数时，倒数。<br>splice(index,deleteCount删除,item1,…..,itemX添加-可选)</li>
 <li>位置方法，返回其他<br>indexOf/latIndexOf()：返回位置值/没有返回-1</li>
-<li>迭代方法，不改变原数组，返回其他/新数组，回调函数-function(item,index,array){return ~}<br>every()/some()：返回boolean<br>map()/forEach()：map返回新数组，filter无返回值<br>filter()：返回新数组<br>reduce(func(prev,cur,index,array){return ~})：归并方法，第一次运算返回值作为第一个参数传入到第二次运算<h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6></li>
+<li>迭代方法，不改变原数组，返回其他/新数组，回调函数-function(item,index,array){return ~}<br>every()/some()：返回boolean<br>map()/forEach()：map返回新数组，filter无返回值<br>filter()：返回新数组<br>reduce(func(prev,cur,index,array){return ~})：归并方法，第一次运算返回值作为第一个参数传入到第二次运算</li>
 </ol>
 <ul>
+<li>伪数组（如argument参数、NodeList对象）<br>不能调用数组方法和length属性<br>能遍历<br>用Array.prototype.slice.call(fakeArray)转化<h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6></li>
 <li>创建实例&amp;方法：<br>返回日期毫秒数(1970.1.1的毫秒数)<br>new Date(“月/日/年”)=new Date( Date.parse(“月/日/年”))<br>new Date(Date.UTC(年,月，其他可选) )<br>表示调用函数时的毫秒数：Date.now()：【可在函数前后加两次，用来算出调用函数所用时间】<br>格式化：toUTCString()<h6 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h6></li>
 <li>创建实例：三种，如果不知道用什么，用构造函数</li>
 </ul>
@@ -241,7 +342,7 @@
 </ul>
 <ol>
 <li>pattern.exec()【每次运行只找一个，如果开了全局，第二次会找下一个，不开全局，则一直返回第一个】</li>
-<li>pattern.test()【是否符合模式】例：if（pattern.test(text)){alert(RegExp.input);<br><img src="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png" alt="table">6666</li>
+<li>pattern.test()【是否符合模式】例：if（pattern.test(text)){alert(RegExp.input);<br><img src="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png" alt="table"></li>
 </ol>
 <h6 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h6><ul>
 <li>定义方法：</li>
@@ -256,7 +357,7 @@
 <li>内部属性</li>
 </ul>
 <ol>
-<li>callee：<br>指向拥有argument对象的函数（在函数内部调用就是函数本身，防止函数在外部改名想调自己的时候调不到）</li>
+<li>callee：<br>指向拥有argument对象的函数（在函数内部调用就是函数本身，防止函数在外部改名想调自己的时候调不到p177）<br>严格模式下callee不行，可以用命名函数表达式var xx=(function oo(arg){oo()?})</li>
 <li>this：<br>调用函数的对象 全局中是windows</li>
 <li>caller：<br>调用函数的函数 全局中是null</li>
 </ol>
@@ -271,7 +372,21 @@
 <li>方法<br>apply（在其中运行函数的作用域，数组/arguments）/call（在其中运行函数的作用域，数组中的各项）:<br>把a函数的作用域改成b（在b函数内运行a，把b的参数用到a函数中），作用是扩充运行作用域<br>例：funtion a(arg1,arg2){~};function<br>b(arg1,arg2){return a.apply(this,[arg1,arg2]/arguments)}<br>bind()。。</li>
 </ul>
 <p><strong>特殊引用类型-基本包装类型</strong><br>每个基本类型都有一个基本包装类型，<br>因为基本类型不能用方法，所以当对基本类型使用方法时，他们会默默出现，创建引用类型的一个实例，执行方法后销毁。所<br>不建议显式的调用因为new出的东西其实是个object 跟正常的基本类型是不同的，比如new一个boolean，它其实是一个object，值永远是TRUE</p>
-<h2 id="二、执行环境及作用域（p73）"><a href="#二、执行环境及作用域（p73）" class="headerlink" title="二、执行环境及作用域（p73）"></a>二、执行环境及作用域（p73）</h2>
+<ul>
+<li>方法<br>charAt()返回字符/charCodeAt()返回字符编码<br>indexOf/latIndexOf()<br>toLowerCase()/toUpperCase()<br>localCompare()比较<br>concat()和+一样/trim()删空格/split(“字符串”或pattern，返回数组长度)<br>slice(start,end)受负数/substring(start,end)不接受负数/substr(start,length)受负数,<br>text.matches(pattern)=pattern.exec(text)返回数组/match(pattern)返回第一个匹配项的索引/replace()???</li>
+</ul>
+<p><strong>单体内置对象</strong></p>
+<ul>
+<li>global对象&amp;方法&amp;属性：作为windows对象的一部分</li>
+</ul>
+<ol>
+<li>encodeURI()/encodeURIcomponent()/decodeURI()/decodeURIcomponent()</li>
+<li>eval()</li>
+</ol>
+<ul>
+<li>Math对象&amp;方法<br>min()/max()/ceil()/floor()/round()/random()</li>
+</ul>
+
       
 
       
@@ -369,6 +484,7 @@
 <ol>
 <li>vuex<br>mapActions():可以将所有methods里面的方法，进行打包。即对所有的事件(或我们的行为)进行管理<br>mapGetters：获取所有的数据，对所有的数据进行管理<br>vuex的工作过程：<br>当用户点击时，会调用increment函数(即用户有一个动作dispatch)，mapActions将函数(动作dispatch)提交到actions里面，并且传了commit这个参数(也是一个函数)<br>commit主要处理你要做什么，比如异步请求，判断，流程控制等，commit会将这些请求、状态提交到mutations里面mutations主要用来处理状态(数据)的变化<br>mapGetters获取目前数据，将状态(数据)提交到getters上面，给mutations使用，让数据发生变化，并返回(render)，从而更新视图<br>actions里面除了含有commit这的对象参数以外，还有另一个参数state(Vue组件中展示的数据源)在这个过程中可以对数据进行判断，并作出相应的操作</li>
 </ol>
+<p><a href="https://github.com/jar-6/music5" target="_blank" rel="external">这是播放器的链接啦~</a></p>
 
       
 
@@ -411,19 +527,19 @@
 
 
   
-    <article id="post-上传本地项目到github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-上传本地项目到github（以及后来遇到的各种问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/jar-6.github.io/2017/08/20/上传本地项目到github/">上传本地项目到github</a>
+      <a class="article-title" href="/jar-6.github.io/2017/08/20/上传本地项目到github（以及后来遇到的各种问题/">上传本地项目到github（以及后来遇到的各种问题</a>
     </h1>
   
 
         
-        <a href="/jar-6.github.io/2017/08/20/上传本地项目到github/" class="archive-article-date">
+        <a href="/jar-6.github.io/2017/08/20/上传本地项目到github（以及后来遇到的各种问题/" class="archive-article-date">
   	<time datetime="2017-08-20T05:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
 </a>
         
@@ -432,7 +548,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近在练习用vue做一个播放器，最后在上传代码时遇到了一些问题，整理一下上传步骤和注意事项。<br>上传步骤如下：<br>进入项目文件夹，touch README.md<br>git init。【创建一个仓库，这时文件夹里会出现一个.git文件夹】<br>git add README.md<br>git add .【注意 .点】<br>git commit -m “注释文字”【要加上-m  “注释文字“”，否则会出现git aborting commit due to empty commit message，我是被卡在这里了。。】<br>git remote add origin git@地址~<br>git push origin master【第一次把push打成pull了，后来看到一篇文章里写如果push不成功可以先pull以下再push】</p>
-<p>终于成功了~~~</p>
+<p>终于成功了<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~~~~~~~~~~~~~~~~~~~~~~~</div></pre></td></tr></table></figure></p>
+<p>08.26更<br>今天更新项目的时候遇到的问题<br>push不上去，让我先pull，pull的时候进到vim里。。<br>解决方法：</p>
+<ol>
+<li>按i 进入insert模式，修改最上面那行黄色合并信息（可以不修改）</li>
+<li>按键盘左上角”Esc”</li>
+<li>输入”:wq”,注意是冒号+wq,按回车键即可<br>由于我当时没这么做，直接ctrl+z了，于是没pull成功，再pull，出现：swap file already exists<br>解决方法：把那个swp文件删了。。<br>然后再pull，又出现：You have not concluded your merge (MERGE_HEAD exists).<br>解决方法：</li>
+<li>保留你本地的修改git merge –abort，git reset –merge，合并后记得一定要提交这个本地的合并，然后在获取线上仓库git pull<br>2.down下线上代码版本,抛弃本地的修改git fetch –all，git reset –hard origin/master<br><del>~</del><del>~</del><del>~</del><del>~</del><del>~</del>~<br>08.27更<br>刚才，吓死宝宝了<br>我一直push不上去，后来看见分支是gh-pages，于是我就切换成了master。。。。。。然后我发现改动都没了！reset什么的也不好使，可是我记得我commit了好几次啊！然后我绝望了，打算重来一遍半个月的工作，后来！我灵光一闪，难道再切回来就好了？切了一下，终于回来了，我哭了。。。。。所以下次瞎实验之前一定要备份好了，git太可怕了</li>
+</ol>
+<p>08.27再更<br>为什么总是这么戏剧，在我又要放弃的时候成功了。。今天太刺激了<br>想给vue项目弄一个展示的demo，一直不成功，打开页面是空白的（之前本地打开也是空白，但是我改了一下dist里的index文件，把src改了，本地就能打开了，但是github上打开还是白的），<br>然后我把dist文件夹拿出来设成gh-pages分支（用git subtree push –prefix=dist origin gh-pages），但是自动生成的gh-pages页面还是指向根目录的index。。。（有一次我把github生成ghpages选项改了一下，然后指向了dist文件夹的index，但是后来我再push后又变回去了而且改不回来了，不知道为啥）<br>后来我做了以下事情，不知道是因为什么成功的。。</p>
+<ol>
+<li>我把github默认branch从master改到ghpages上了，然后push的</li>
+<li>我把build文件夹里的webpack.prod.conf.js里的output中加上了publicPath:’/‘<br>（ps之前失败可能是因为dist有一部分没push上去，因为不小心放到ignore里了）</li>
+<li>我在dist中npm install了一下http-server（全局和非全局都来了一下。。。）<br>然后我绝望的再次push，就成功了！~<br>（ps电脑中这个不是master分支，是gh-pages分支，之前一直无法push，后来我是用的git push origin gh-pages:master -f</li>
+</ol>
 
       
 
@@ -445,7 +574,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/上传本地项目到github/">展开全文 >></a>
+          <a class="article-more-a" href="/jar-6.github.io/2017/08/20/上传本地项目到github（以及后来遇到的各种问题/">展开全文 >></a>
         </p>
       
 

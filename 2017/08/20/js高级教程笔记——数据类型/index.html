@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://jar-6.github.io">
   <title>js高级教程笔记——数据类型 | 范范的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、数据类型1. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx i">
+  <meta name="description" content="一. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx instanc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js高级教程笔记——数据类型">
 <meta property="og:url" content="https://jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/index.html">
 <meta property="og:site_name" content="范范的博客">
-<meta property="og:description" content="一、数据类型1. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx i">
+<meta property="og:description" content="一. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx instanc">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://jar-6.github.io/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png">
-<meta property="og:updated_time" content="2017-08-20T07:43:13.149Z">
+<meta property="og:updated_time" content="2017-08-26T09:57:11.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js高级教程笔记——数据类型">
-<meta name="twitter:description" content="一、数据类型1. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx i">
+<meta name="twitter:description" content="一. 总述区别：  基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本 引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本（指针指向堆中的同一个对象）  检测方法：  typeof xx：检测是什么类型，返回类型（所有引用类型均返回object） xx instanc">
 <meta name="twitter:image" content="https://jar-6.github.io/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png">
   
     <link rel="alternative" href="/atom.xml" title="范范的博客" type="application/atom+xml">
@@ -176,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h2><h3 id="1-总述"><a href="#1-总述" class="headerlink" title="1. 总述"></a>1. 总述</h3><p><strong>区别：</strong></p>
+        <h2 id="一-总述"><a href="#一-总述" class="headerlink" title="一. 总述"></a>一. 总述</h2><p><strong>区别：</strong></p>
 <ul>
 <li>基本类型： 1. 不可以添加属性 2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，不影响副本</li>
 <li>引用类型：（由多个值组成）：1.可以添加属性2.复制后/变量作为参数传递给函数时，改变原始值/在函数中改变变量，影响副本<br>（指针指向堆中的同一个对象）</li>
@@ -190,9 +190,11 @@
 <p><strong>转换方法：</strong></p>
 <ul>
 <li>valueOf：Array-字符串，Date-1970.1.1毫秒数，其他不变</li>
-<li>toString（）/toLocaleString（）</li>
+<li>toString()/toLocaleString()</li>
+<li>parseInt()/parseFloat()/number()</li>
+<li>隐式类型转换==(===不转换类型)</li>
 </ul>
-<h3 id="2-各类型"><a href="#2-各类型" class="headerlink" title="2. 各类型"></a>2. 各类型</h3><p><strong>基本类型（见第三章）：</strong><br>Undefined、Null、Boolean、Number、String<br><strong>引用类型：</strong></p>
+<h2 id="二-各类型"><a href="#二-各类型" class="headerlink" title="二. 各类型"></a>二. 各类型</h2><p><strong>基本类型（见第三章）：</strong><br>Undefined、Null、Boolean、Number、String<br><strong>引用类型：</strong></p>
 <h6 id="object"><a href="#object" class="headerlink" title="object:"></a>object:</h6><ul>
 <li>创建实例：</li>
 </ul>
@@ -222,9 +224,10 @@
 <li>改变原数组，返回其他：<br>push()：栈方法，返回新数组长度<br>pop()：栈方法，返回移除项<br>shift()：队列方法，返回移除项<br>unshift()：队列方法，返回新数组长度<br>reverse()：<br>sort(function(a,b){return ~})：如果没有function，各项转化成字符串</li>
 <li>操作方法不改变原数组，返回新数组：<br>concat()：<br>slice(start,end可选)：参数是负数时，倒数。<br>splice(index,deleteCount删除,item1,…..,itemX添加-可选)</li>
 <li>位置方法，返回其他<br>indexOf/latIndexOf()：返回位置值/没有返回-1</li>
-<li>迭代方法，不改变原数组，返回其他/新数组，回调函数-function(item,index,array){return ~}<br>every()/some()：返回boolean<br>map()/forEach()：map返回新数组，filter无返回值<br>filter()：返回新数组<br>reduce(func(prev,cur,index,array){return ~})：归并方法，第一次运算返回值作为第一个参数传入到第二次运算<h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6></li>
+<li>迭代方法，不改变原数组，返回其他/新数组，回调函数-function(item,index,array){return ~}<br>every()/some()：返回boolean<br>map()/forEach()：map返回新数组，filter无返回值<br>filter()：返回新数组<br>reduce(func(prev,cur,index,array){return ~})：归并方法，第一次运算返回值作为第一个参数传入到第二次运算</li>
 </ol>
 <ul>
+<li>伪数组（如argument参数、NodeList对象）<br>不能调用数组方法和length属性<br>能遍历<br>用Array.prototype.slice.call(fakeArray)转化<h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6></li>
 <li>创建实例&amp;方法：<br>返回日期毫秒数(1970.1.1的毫秒数)<br>new Date(“月/日/年”)=new Date( Date.parse(“月/日/年”))<br>new Date(Date.UTC(年,月，其他可选) )<br>表示调用函数时的毫秒数：Date.now()：【可在函数前后加两次，用来算出调用函数所用时间】<br>格式化：toUTCString()<h6 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h6></li>
 <li>创建实例：三种，如果不知道用什么，用构造函数</li>
 </ul>
@@ -245,7 +248,7 @@
 </ul>
 <ol>
 <li>pattern.exec()【每次运行只找一个，如果开了全局，第二次会找下一个，不开全局，则一直返回第一个】</li>
-<li>pattern.test()【是否符合模式】例：if（pattern.test(text)){alert(RegExp.input);<br><img src="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png" alt="table">6666</li>
+<li>pattern.test()【是否符合模式】例：if（pattern.test(text)){alert(RegExp.input);<br><img src="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/img1.png" alt="table"></li>
 </ol>
 <h6 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h6><ul>
 <li>定义方法：</li>
@@ -260,7 +263,7 @@
 <li>内部属性</li>
 </ul>
 <ol>
-<li>callee：<br>指向拥有argument对象的函数（在函数内部调用就是函数本身，防止函数在外部改名想调自己的时候调不到）</li>
+<li>callee：<br>指向拥有argument对象的函数（在函数内部调用就是函数本身，防止函数在外部改名想调自己的时候调不到p177）<br>严格模式下callee不行，可以用命名函数表达式var xx=(function oo(arg){oo()?})</li>
 <li>this：<br>调用函数的对象 全局中是windows</li>
 <li>caller：<br>调用函数的函数 全局中是null</li>
 </ol>
@@ -275,7 +278,21 @@
 <li>方法<br>apply（在其中运行函数的作用域，数组/arguments）/call（在其中运行函数的作用域，数组中的各项）:<br>把a函数的作用域改成b（在b函数内运行a，把b的参数用到a函数中），作用是扩充运行作用域<br>例：funtion a(arg1,arg2){~};function<br>b(arg1,arg2){return a.apply(this,[arg1,arg2]/arguments)}<br>bind()。。</li>
 </ul>
 <p><strong>特殊引用类型-基本包装类型</strong><br>每个基本类型都有一个基本包装类型，<br>因为基本类型不能用方法，所以当对基本类型使用方法时，他们会默默出现，创建引用类型的一个实例，执行方法后销毁。所<br>不建议显式的调用因为new出的东西其实是个object 跟正常的基本类型是不同的，比如new一个boolean，它其实是一个object，值永远是TRUE</p>
-<h2 id="二、执行环境及作用域（p73）"><a href="#二、执行环境及作用域（p73）" class="headerlink" title="二、执行环境及作用域（p73）"></a>二、执行环境及作用域（p73）</h2>
+<ul>
+<li>方法<br>charAt()返回字符/charCodeAt()返回字符编码<br>indexOf/latIndexOf()<br>toLowerCase()/toUpperCase()<br>localCompare()比较<br>concat()和+一样/trim()删空格/split(“字符串”或pattern，返回数组长度)<br>slice(start,end)受负数/substring(start,end)不接受负数/substr(start,length)受负数,<br>text.matches(pattern)=pattern.exec(text)返回数组/match(pattern)返回第一个匹配项的索引/replace()???</li>
+</ul>
+<p><strong>单体内置对象</strong></p>
+<ul>
+<li>global对象&amp;方法&amp;属性：作为windows对象的一部分</li>
+</ul>
+<ol>
+<li>encodeURI()/encodeURIcomponent()/decodeURI()/decodeURIcomponent()</li>
+<li>eval()</li>
+</ol>
+<ul>
+<li>Math对象&amp;方法<br>min()/max()/ceil()/floor()/round()/random()</li>
+</ul>
+
       
 
       
@@ -346,6 +363,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/jar-6.github.io/2017/08/23/js高级教程笔记——原型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js高级教程笔记——原型
+        
+      </div>
+    </a>
   
   
     <a href="/jar-6.github.io/2017/08/20/学习Vue/" id="article-nav-older" class="article-nav-link-wrap">
