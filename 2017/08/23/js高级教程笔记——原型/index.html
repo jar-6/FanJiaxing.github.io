@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://jar-6.github.io">
   <title>js高级教程笔记——原型 | 范范的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块？？ with语句？？-没有块级作用域（所以变量弄">
+  <meta name="description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块 with语句-没有块级作用域（所以变量弄不好就会">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js高级教程笔记——原型">
 <meta property="og:url" content="https://jar-6.github.io/2017/08/23/js高级教程笔记——原型/index.html">
 <meta property="og:site_name" content="范范的博客">
-<meta property="og:description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块？？ with语句？？-没有块级作用域（所以变量弄">
+<meta property="og:description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块 with语句-没有块级作用域（所以变量弄不好就会">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p4fjdj30m80hkab2.jpg">
-<meta property="og:updated_time" content="2017-08-27T10:47:17.175Z">
+<meta property="og:updated_time" content="2017-09-09T08:54:58.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js高级教程笔记——原型">
-<meta name="twitter:description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块？？ with语句？？-没有块级作用域（所以变量弄">
+<meta name="twitter:description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块 with语句-没有块级作用域（所以变量弄不好就会">
 <meta name="twitter:image" content="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg">
   
     <link rel="alternative" href="/atom.xml" title="范范的博客" type="application/atom+xml">
@@ -183,12 +183,11 @@
 <li>延迟作用域链：</li>
 </ul>
 <ol>
-<li>try-catch语句中catch块？？</li>
-<li>with语句？？<br>-没有块级作用域（所以变量弄不好就会乱）</li>
+<li>try-catch语句中catch块</li>
+<li>with语句<br>-没有块级作用域（所以变量弄不好就会乱）</li>
 <li>初始化变量没有var声明，会自动添加到全局环境</li>
 <li>用变量时会沿着作用域链搜寻,所以会被覆盖（如果变量被定义多次会用作用域链前端的那个。)</li>
 </ol>
-<p>然后有空研究一下深浅拷贝</p>
 <h2 id="二、对象的原型-amp-继承"><a href="#二、对象的原型-amp-继承" class="headerlink" title="二、对象的原型&amp;继承"></a>二、对象的原型&amp;继承</h2><p><img src="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg" alt=""><br><img src="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p4fjdj30m80hkab2.jpg" alt=""></p>
 <ul>
 <li>读取属性时会沿着原型链搜寻,所以会被覆盖（如果有多个属性会用实例的那个。）</li>

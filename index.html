@@ -178,12 +178,11 @@
 <li>延迟作用域链：</li>
 </ul>
 <ol>
-<li>try-catch语句中catch块？？</li>
-<li>with语句？？<br>-没有块级作用域（所以变量弄不好就会乱）</li>
+<li>try-catch语句中catch块</li>
+<li>with语句<br>-没有块级作用域（所以变量弄不好就会乱）</li>
 <li>初始化变量没有var声明，会自动添加到全局环境</li>
 <li>用变量时会沿着作用域链搜寻,所以会被覆盖（如果变量被定义多次会用作用域链前端的那个。)</li>
 </ol>
-<p>然后有空研究一下深浅拷贝</p>
 <h2 id="二、对象的原型-amp-继承"><a href="#二、对象的原型-amp-继承" class="headerlink" title="二、对象的原型&amp;继承"></a>二、对象的原型&amp;继承</h2><p><img src="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg" alt=""><br><img src="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p4fjdj30m80hkab2.jpg" alt=""></p>
 <ul>
 <li>读取属性时会沿着原型链搜寻,所以会被覆盖（如果有多个属性会用实例的那个。）</li>
