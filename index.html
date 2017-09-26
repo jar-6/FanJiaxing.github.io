@@ -152,6 +152,124 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-学习php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/jar-6.github.io/2017/09/17/学习php/">学习php</a>
+    </h1>
+  
+
+        
+        <a href="/jar-6.github.io/2017/09/17/学习php/" class="archive-article-date">
+  	<time datetime="2017-09-17T08:39:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##一、WAMPServer(windows Apache MySQL PHP打成集成开发包)</p>
+<ul>
+<li>功能服务面板 </li>
+</ul>
+<ol>
+<li>打开localhost</li>
+<li>可视化管理数据库</li>
+<li>网站根目录地址</li>
+<li>Aphache&amp;php&amp;mySQL目录</li>
+<li>网站性能分析</li>
+<li>wamp状态控制：在线-局域网可访问，离线-只有本机可访问</li>
+</ol>
+<h3 id="自定义网站根目录"><a href="#自定义网站根目录" class="headerlink" title="自定义网站根目录"></a>自定义网站根目录</h3><p>为了分离服务和代码，改变网站根目录地址</p>
+<ol>
+<li>改localhost</li>
+</ol>
+<ul>
+<li>打开apache目录中的config文件，搜索并修改documentroot和directory，</li>
+<li>重启——打开localhost/文件，成功运行。</li>
+</ul>
+<ol>
+<li>改默认网站根目录地址wamp/www</li>
+</ol>
+<ul>
+<li>在wamp根目录下找到wampmanager.ini和wampmanager.tpl</li>
+<li>wampmanager.ini下把www 目录对应的filename改为自定义目录</li>
+<li>wampmanager.tpl下把${w_wwwDirectory}对应的filename改为自定义目录</li>
+<li>重启</li>
+</ul>
+<h3 id="多站点配置"><a href="#多站点配置" class="headerlink" title="多站点配置"></a>多站点配置</h3><p>wamp服务下管理多个网站配置</p>
+<ol>
+<li>添加站点<br>在wamp/bin/apache/Apache…/conf/extra/httpd-vhost.conf<br>documentroot：代码路径<br>servername：主机名（域名）</li>
+<li>加载http-vhost.conf<br>http-vhost.conf 是扩展文件 默认情况下不会加载<br>告诉 Apache 打开httpd.conf 搜索 httpd-vhost<br>找到 #include conf/extra/httpd-vhosts.conf 包含扩展文件 去掉注释#</li>
+<li>允许外部主机地址访问<br>apache 默认拒绝其他外部主机地址访问服务器下的资源 修改成允许访问<br>在httpd.conf 搜索 文件夹名 找到<br>deny from all（拒绝其他的外部访问）  //deny改成allow<br>allow from 127.0.0.1 允许127.0.0.1 本机访问  //注释掉</li>
+<li>重启所有服务</li>
+<li>建立网站代码<br>在根目录下 创建多个站点的文件夹，分别新建PHP</li>
+<li>在host文件中添加站点<br>打开c:/windows/system32/drivers/etc/hosts 添加站点127.0.0.1 域名1&amp;2..<br>指向本地localhost  如果碰到test01.com域名时 优先向127.0.0.1请求资源</li>
+</ol>
+<h3 id="自定端口号，为了防止被占用（默认是80端口）"><a href="#自定端口号，为了防止被占用（默认是80端口）" class="headerlink" title="自定端口号，为了防止被占用（默认是80端口）"></a>自定端口号，为了防止被占用（默认是80端口）</h3><p>打开 httpd.conf<br>找到 listen 80和servername localhost:80 改成 8080<br>之前打开localhost就行，改了之后要打开localhost：端口号</p>
+<h2 id="二、Zend-Studio"><a href="#二、Zend-Studio" class="headerlink" title="二、Zend Studio"></a>二、Zend Studio</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>创建新项目（路径为apache文件夹）和创建已存在的项目（路径为项目文件夹）</p>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>ctrl+alt+↓ 复制行<br>ctrl+d  删除行<br>alt+↑/↓    互换行<br>ctrl+/    和ctrl+shift+/注释<br>alt+/    提示助手<br>end键    跳转到行末<br>ctrl+f     查找面板<br>ctrl(+shift)+k  查找下(上)一个<br>ctrl+h  全文检索，打开搜索替换窗口,可搜索整个工作空间<br>ctrl+Shift+f  对齐-代码格式化<br>ctrl+w 关闭当前文件<br>ctrl+shift+s 保存所有文件<br>ctrl+shift+l 查看所有的快捷键<br>preferences-General-Keys  设置快捷键</p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ol>
+<li>大纲：<br>Navigate–Show in–Outline（public-绿色-公开方法 protected-黄色-受保护 private-红色-私有）</li>
+<li>查看错误信息：<br>查看错误信息：problems是基于整个程序的，错误提示框位于代码编辑框下面，可以查看文件名、路径、代码行号，双击错误可以跳转到错误位置</li>
+<li>断点调试：<br>当前页面首次调试，需要进行调试配置；选中-右键-Debug As-Debug Configurations…-PHP CLI Application-PHP Script页面-默认设置-点击Debug<br>当前页面再次调试，可以直接运行；选中-右键-Debug As-1 PHP CLI<br>调试快捷键：<br>F5:单步调试进入函数内部（单步进入）<br>F6:单步调试不进入函数内部（跳过）<br>F7:由函数内部返回到调用处（跳出）<br>F8：下一断点？之前？</li>
+<li>自动上传代码<br>文件上传ftp:<br>project-右键-properties-automatic upload<br>checked enable automatic upload<br>remote connection manage<br>upload files : on run (在运行时上传) on save(自动上传) manually （不会被上传）</li>
+</ol>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ol>
+<li><p>SVN插件<br>svn是个规范代码和管理代码版本的工具<br>​打开Zend studio开发工具，点菜单栏的help-&gt;Install New Software；<br>弹出窗口的 Work with 栏输入：<a href="http://subclipse.tigris.org/update_1.8.x，然后点" target="_blank" rel="external">http://subclipse.tigris.org/update_1.8.x，然后点</a> Add按钮；<br>name随意输入，location默认；<br>勾选要安装的插件-&gt;next-&gt;next-&gt;同意协议finish；<br>文件右键<br>team-&gt;comment：备注<br>team-&gt;ravert：回滚/恢复文件；(默认会滚到最新的文件)<br>team-&gt;update to Revison:回滚至某个版本<br>team-&gt;show history-&gt;compare current with 3 对比不同的版本</p>
+</li>
+<li><p>emmet插件<br>可快速生成HTML代码</p>
+<blockquote>
+<p>：表示上下层级<br>+：表示同级<br>*：表示数量<br>[]:其内填写tag的属性、属性值<br>{}：其内填写tag内的文本<br>$：在循环多个属性或者值情况下，$为其加上序号，$的数量表示几位数<br>()：优先解析该符号中的内容<br>例：ul&gt;li.item${haha $$}<br>(select&gt;.wrap&gt;h1&gt;p&gt;a)+(select&gt;.hah&gt;p+p)</p>
+</blockquote>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/jar-6.github.io/2017/09/17/学习php/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js高级教程笔记——原型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jar-6.github.io">
-  <title>js高级教程笔记——原型 | 范范的博客</title>
+  <title>Archives: 2017/9 | 范范的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块 with语句-没有块级作用域（所以变量弄不好就会">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js高级教程笔记——原型">
-<meta property="og:url" content="https://jar-6.github.io/2017/08/23/js高级教程笔记——原型/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="范范的博客">
+<meta property="og:url" content="https://jar-6.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="范范的博客">
-<meta property="og:description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块 with语句-没有块级作用域（所以变量弄不好就会">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p4fjdj30m80hkab2.jpg">
-<meta property="og:updated_time" content="2017-09-09T08:54:58.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js高级教程笔记——原型">
-<meta name="twitter:description" content="一、执行环境及作用域（p73） 执行环境：执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法 作用域链：顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境 延迟作用域链：   try-catch语句中catch块 with语句-没有块级作用域（所以变量弄不好就会">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg">
+<meta name="twitter:title" content="范范的博客">
   
     <link rel="alternative" href="/atom.xml" title="范范的博客" type="application/atom+xml">
   
@@ -157,176 +150,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js高级教程笔记——原型" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      js高级教程笔记——原型
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/jar-6.github.io/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/jar-6.github.io/2017/09/17/学习php/" class="archive-article-date">
+  	<time datetime="2017-09-17T08:39:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-17</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/jar-6.github.io/2017/09/17/学习php/">学习php</a>
     </h1>
   
 
-        
-        <a href="/jar-6.github.io/2017/08/23/js高级教程笔记——原型/" class="archive-article-date">
-  	<time datetime="2017-08-23T14:59:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、执行环境及作用域（p73）"><a href="#一、执行环境及作用域（p73）" class="headerlink" title="一、执行环境及作用域（p73）"></a>一、执行环境及作用域（p73）</h2><ul>
-<li>执行环境：<br>执行环境定义了变量或函数有权访问的其他数据，每个执行环境都有一个变量对象。<br>全局执行环境被认为是window对象，索引全局变量和函数都是window对象的属性和方法</li>
-<li>作用域链：<br>顺序：当前执行代码所在环境的变量对象——外部环境——外部环境——全局执行环境</li>
-<li>延迟作用域链：</li>
-</ul>
-<ol>
-<li>try-catch语句中catch块</li>
-<li>with语句<br>-没有块级作用域（所以变量弄不好就会乱）</li>
-<li>初始化变量没有var声明，会自动添加到全局环境</li>
-<li>用变量时会沿着作用域链搜寻,所以会被覆盖（如果变量被定义多次会用作用域链前端的那个。)</li>
-</ol>
-<h2 id="二、对象的原型-amp-继承"><a href="#二、对象的原型-amp-继承" class="headerlink" title="二、对象的原型&amp;继承"></a>二、对象的原型&amp;继承</h2><p><img src="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p5kwtj30m817e75z.jpg" alt=""><br><img src="http://wx2.sinaimg.cn/mw1024/00627l70ly1fiyh6p4fjdj30m80hkab2.jpg" alt=""></p>
-<ul>
-<li>读取属性时会沿着原型链搜寻,所以会被覆盖（如果有多个属性会用实例的那个。）</li>
-<li>相关方法：</li>
-</ul>
-<ol>
-<li>~.hasOwnProperty(“property”)：检测属性是否存在,在实例中返回true</li>
-<li>“property” in ~：检测属性是否存在,在实例和原型中都返回true<br>3.~.keys():取得所有可枚举属性<br>4.~ instanceof 原型：测试实例和原型链中出现的构造函数</li>
-</ol>
-<h3 id="创建对象方法"><a href="#创建对象方法" class="headerlink" title="创建对象方法"></a>创建对象方法</h3><ul>
-<li>创建一个Object实例，添加属性方法。var xx=new Object();xx.oo=”~”,xx.oo2=function(){}</li>
-<li>字面量语法：var xx={xx:”~”,xx2:function(){}}</li>
-<li>工厂模式：适用于批量<br>把在函数中创建实例，参数传入函数：<br>function createXx(oo1,oo2..){var xx=new Object; xx.oo1=oo1; xx.oo2=function(){?oo2};return xx}<br>var xx实例=createXx(oo1,oo2..);</li>
-<li>构造函数模式：解决了对象识别问题<br>把前者的函数名换成自定义构造函数、函数中不new Object&amp;不return、函数后var实例时var的是自定义的对象。<br>function Xx(oo1,oo2..){xx.oo1=oo1; xx.oo2=function(){?oo2};}<br>var xx实例=Xx(oo1,oo2..);</li>
-<li>原型模式：所有对象共享属性方法<br>把前者的参数去掉，添加属性时加上prototype<br>function Xx(){xx.prototype.oo1=oo1; xx.prototype.oo2=function(){?oo2};}<br>var xx实例=Xx();</li>
-<li>把前者函数中的所有内容用字面量表示：比较好写<br>但是相当于重写了prototype，导致</li>
-</ul>
-<ol>
-<li>constructior属性不再指向自定义原型，所以要加上’constructor:自定义原型’这句，但是后加上的是可枚举的</li>
-<li>切断原型和实例的关系，实例不可调用原型中的方法</li>
-</ol>
-<ul>
-<li>组合使用构造函数模式和原型模式！！！！<br>构造函数模式定义实例属性，原型模式定义方法和共享属性<br>function Xx(oo1,oo2..){xx.oo1=oo1; }<br>Xx.prototype={constructor:Xx, oo2:function(){?oo2};}<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3>用原型链继承原型属性和方法，用构造函数继承实例属性<br>function SubXx(oo1,oo2,oo3){<br>Xx.call(this,oo1);     //用原型链继承属性<br>this.oo3=oo3    //用原型链新建属性<br>}<br>SubXx.prototype=new Xx();     //用构造函数继承方法<br>SubXx.prototype.constructor=SubXx; SubXx.prototype.oo4    //用构造函数新建方法</li>
-</ul>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://jar-6.github.io/2017/08/23/js高级教程笔记——原型/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/jar-6.github.io/2017/09/17/学习php/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          学习php
-        
-      </div>
-    </a>
   
   
-    <a href="/jar-6.github.io/2017/08/20/js高级教程笔记——数据类型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js高级教程笔记——数据类型</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -353,8 +219,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
